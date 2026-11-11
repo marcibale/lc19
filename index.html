@@ -828,7 +828,7 @@ h3 { font: 700 20px/1.1 var(--font-display); text-transform: uppercase; letter-s
   /* ---- Arranque ---- */
   async function boot() {
     var saved = lsGet('padel.pareja');
-    if (saved && IDS.indexOf(saved) >= 0) state.me = saved;
+    if (saved) state.me = saved;
     readHash();
 
     if (!FIREBASE_CONFIG.apiKey || /^PEGA/.test(FIREBASE_CONFIG.apiKey)) { state.setup = true; render(true); return; }
